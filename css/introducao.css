@@ -1,0 +1,67 @@
+/* * {
+  box-shadow: 0 0 0 1px red;
+} */
+.introducao {
+  max-width: 1200px;
+  padding: 40px 20px;
+  /* Alinhas o conteudo */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+h1 {
+  font-size: 4.5rem;
+  line-height: 1.3;
+  margin-bottom: 30px;
+  position: relative;
+  /* o pai é definido como o positioon relative
+  ele vai ser a referencia para aquele que tiver com
+  position absolute */
+}
+.introducao h1::before{
+ content: " ";
+ /* z index coloca o elemento atras do que esta 
+ definido como referencia */
+ transform: rotate(90deg);
+ z-index: -1;
+ top: 40px;
+ left: -75px;
+ display: block;
+ width: 80px;
+ height: 10px;
+ background-color:#ff8800;
+ position: absolute;
+}
+.introducao p {
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+@media (max-width:1000px) {
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+@media(max-width:800px) {
+  .introducao {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  .header-foguete {
+    margin-left: 300px;
+    margin-bottom: 10px;
+  }
+}
+@media(max-width:500px) {
+  .introducao {
+    grid-template-columns: 1fr;
+  }
+  .introducao img {
+    display: none;
+  }
+}
